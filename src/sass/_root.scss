@@ -1,0 +1,96 @@
+body {
+    background-color: $main-lightGrey;
+}
+
+small {
+    color: rgba($color: $main-black, $alpha: 0.5);
+}
+
+.v-navbar {
+    background-color: $main-white;
+    height: 50px;
+    display: flex;
+    padding: 10px;
+    position: sticky;
+    top: 0px;
+
+    .v-logo {
+        align-self: center;
+        display: flex;
+        margin: 0 20px 0 0;
+        svg:nth-child(1) {
+            height: 30px;
+            margin-right: 10px;
+        }
+        svg:nth-child(2) {
+            height: 20px;
+            align-self: center;
+        }
+    }
+
+    .v-searchBar {
+        flex-grow: 1;
+        border: 1px solid $main-lightGrey;
+        border-radius: 5px;
+
+        &:focus {
+            outline: 1px solid $main-darkGrey !important;
+        }
+    }
+}
+
+.v-main {
+    display: flex !important;
+    flex-direction: row;
+    .v-postList {
+        flex-grow: 2;
+        .v-post {
+            .v-post-content {
+                display: flex;
+                flex-direction: column;
+                padding: 0 aut0;
+                .v-post-user {
+                    align-self: start;
+                    display: flex;
+                    .header, small {
+                        margin-left: 10px;
+                    }
+                    .header a {
+                        color: $main-orange;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                .content {
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+    .v-chart {
+        flex-grow: 1;
+        flex-basis: 500px;
+        ul {
+            li {
+                margin: 0.5rem 0;
+                text-indent: -20px;
+                list-style: none;
+                strong {
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+}
+
+.v-card {
+    margin: 10px 5px;
+    border: 1px solid $main-grey;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: $main-white;
+    p {
+        text-align: justify;
+    }
+}
