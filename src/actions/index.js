@@ -3,7 +3,7 @@ import jsonPlaceholder from '../apis/jsonPlaceholder';
 
 // 解決重複連線的問題 -- 寫法二
 export const fetchPostsAndUsers = () => async (dispatch, getState) => {
-    console.log('About to fetch posts');
+    // console.log('About to fetch posts');
     await dispatch(fetchPosts());
     
     // 寫法二 -- 一種寫法
@@ -27,6 +27,20 @@ export const fetchPosts = () => async dispatch => {
         payload: response.data
     })
 };
+
+export const setKeywords = event => {
+    return {
+        type: 'SET_KEYWORDS',
+        payload: event.target.value
+    }
+};
+
+export const filterPosts = condition => {
+    return {
+        type: 'FILTER_POSTS',
+        payload: condition
+    }
+}
 
 export const fetchUser = id => async dispatch => {
     const response  = await jsonPlaceholder.get(`/users/${id}`);

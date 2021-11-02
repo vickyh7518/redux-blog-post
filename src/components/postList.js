@@ -10,7 +10,7 @@ class PostList extends Component {
         // 解決重複連線的問題 -- 寫法二
         this.props.fetchPostsAndUsers();
     }
-
+    
     renderList() {
         return this.props.posts.map(post => {
             return (
